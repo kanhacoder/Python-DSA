@@ -4,11 +4,19 @@ for i in bracket:
     if i=="(" or i=="{" or i=="[":
         stack.append(i)
         #print(i)
-    if i==")" and stack[len(stack)-1]=="(":
+    if len(stack)==0 and (i==")" or i=="}" or i=="]"):
+        print("Not Balanced")
+        break
+    if len(stack)!=0 and (i==")" or i=="}" or i=="]"):
+        stack.append(i)
+    if i==")" and stack[-2]=="(":
          stack.pop()
-    elif i=="}" and stack[len(stack)-1]=="{":
          stack.pop()
-    elif i=="]" and stack[len(stack)-1]=="[":
+    elif i=="}" and stack[-2]=="{":
+         stack.pop()
+         stack.pop()
+    elif i=="]" and stack[-2]=="[":
+         stack.pop()
          stack.pop()
 if len(stack)==0:
     print("Balanced")
