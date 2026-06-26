@@ -1,3 +1,7 @@
+# string1 = "   fly me   to   the moon  "
+# words = string1.split()
+# print(len(words[-1]))
+
 string1 = "   fly me   to   the moon  "
 length = 0
 for i in range(len(string1)-1,1,-1):
